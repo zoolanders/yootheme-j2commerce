@@ -1,10 +1,10 @@
 <?php
 
-namespace YOOtheme\Source\J2Store\Listener;
+namespace ZOOlanders\YOOtheme\J2Store\Listener;
 
 use J2Store;
 use YOOtheme\Builder\Source;
-use YOOtheme\Source\J2Store\Type;
+use ZOOlanders\YOOtheme\J2Store\Type;
 
 class ExtendArticleType
 {

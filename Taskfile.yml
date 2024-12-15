@@ -1,0 +1,11 @@
+# Add your own tasks here.
+
+version: '3'
+
+includes:
+  utils: vendor/yootheme/starter-utils
+  build:
+    taskfile: ./build/Taskfile.yml
+    flatten: true
+
+dotenv: ['.env']

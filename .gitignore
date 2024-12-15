@@ -1,0 +1,12 @@
+.idea
+.vscode
+.history
+.DS_Store
+.php_cs.cache
+.env*.local
+
+/dist
+/vendor
+
+./ytp_j2store.php
+./ytp_j2store.xml

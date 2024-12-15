@@ -1,0 +1,27 @@
+{
+    "name": "yootheme/starter-plugin",
+    "description": "YOOtheme Pro - Starter Plugin",
+    "license": "GPL",
+    "type": "project",
+    "keywords": [
+        "joomla",
+        "wordpress",
+        "yootheme"
+    ],
+    "require": {
+        "php": "^8.0"
+    },
+    "require-dev": {
+        "yootheme/starter-utils": "^1.0"
+    },
+    "scripts": {
+        "run:task": "YOOtheme\\Starter\\TaskHelper::run",
+        "create:plugin": "YOOtheme\\Starter\\CreatePluginCommand",
+        "create:element": "YOOtheme\\Starter\\CreateElementCommand",
+        "create:module": "YOOtheme\\Starter\\CreateModuleCommand",
+        "create:joomlaUpdate": "YOOtheme\\Starter\\CreateJoomlaUpdateCommand",
+        "create:wordpressUpdate": "YOOtheme\\Starter\\CreateWordpressUpdateCommand",
+        "post-create-project-cmd": "echo Please run composer create:plugin",
+        "post-update-cmd": "YOOtheme\\Starter\\TaskHelper::postUpdate"
+    }
+}

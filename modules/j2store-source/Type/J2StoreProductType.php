@@ -1,6 +1,6 @@
 <?php
 
-namespace YOOtheme\Source\J2Store\Type;
+namespace ZOOlanders\YOOtheme\J2Store\Type;
 
 class J2StoreProductType
 {
