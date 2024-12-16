@@ -2,6 +2,8 @@
 
 namespace ZOOlanders\YOOtheme\J2Store\Type;
 
+use J2StoreTableProduct;
+
 class J2StoreProductType
 {
     public const NAME = 'J2StoreProduct';
@@ -16,6 +18,9 @@ class J2StoreProductType
                     'metadata' => [
                         'label' => 'ID',
                     ],
+                    'extensions' => [
+                        'call' => __CLASS__ . '::resolveId',
+                    ],
                 ],
             ],
 
@@ -24,5 +29,10 @@ class J2StoreProductType
                 'label' => self::LABEL,
             ],
         ];
+    }
+
+    public static function resolveId(J2StoreTableProduct $product): int
+    {
+        return $product->j2store_product_id;
     }
 }

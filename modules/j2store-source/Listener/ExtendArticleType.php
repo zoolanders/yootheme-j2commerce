@@ -3,6 +3,7 @@
 namespace ZOOlanders\YOOtheme\J2Store\Listener;
 
 use J2Store;
+use J2StoreTableProduct;
 use YOOtheme\Builder\Source;
 use ZOOlanders\YOOtheme\J2Store\Type;
 
@@ -30,20 +31,14 @@ class ExtendArticleType
         ]);
     }
 
-    public static function resolveJ2StoreProduct($article, $args): array
+    public static function resolveJ2StoreProduct($article): J2StoreTableProduct
     {
-        $fof = J2Store::fof();
-        $productTable = $fof->loadTable('Product', 'J2StoreTable');
+        $table = J2Store::fof()->loadTable('Product', 'J2StoreTable');
+        $model = \F0FModel::getTmpInstance('Products', 'J2StoreModel');
 
-        $product = $productTable->get_product_by_source('com_content', $article->id);
+        $product = $table->get_product_by_source('com_content', $article->id);
+        $product = $model->getProduct($product);
 
-        if (!$product) {
-            return null;
-        }
-
-        return [
-            'id' => $product->j2store_product_id,
-        ];
+        return $product;
     }
-
 }
