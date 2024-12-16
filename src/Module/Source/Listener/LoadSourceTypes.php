@@ -14,16 +14,19 @@ class LoadSourceTypes
     {
         $types = [
             [Type\ProductType::NAME, Type\ProductType::config()],
+            [Type\CartItemType::NAME, Type\CartItemType::config()],
+        ];
+
+        $query = [
+            Type\CartItemsQueryType::config(),
         ];
 
         foreach ($types as $args) {
             $source->objectType(...$args);
         }
 
-        // $query = [];
-
-        // foreach ($query as $args) {
-        //     $source->queryType($args);
-        // }
+        foreach ($query as $args) {
+            $source->queryType($args);
+        }
     }
 }

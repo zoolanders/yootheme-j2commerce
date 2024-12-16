@@ -2,7 +2,9 @@
 
 namespace ZOOlanders\YOOtheme\J2Commerce\Module\Source\Type;
 
+use J2Store;
 use J2StoreTableProduct;
+use function YOOtheme\trans;
 
 class ProductType
 {
@@ -16,37 +18,37 @@ class ProductType
                 'id' => [
                     'type' => 'Int',
                     'metadata' => [
-                        'label' => 'ID',
+                        'label' => trans('ID'),
                     ],
                     'extensions' => [
-                        'call' => __CLASS__ . '::resolveId',
+                        'call' => __CLASS__ . '::id',
                     ],
                 ],
                 'price' => [
                     'type' => 'String',
                     'metadata' => [
-                        'label' => 'Price',
+                        'label' => trans('Price'),
                     ],
                     'extensions' => [
-                        'call' => __CLASS__ . '::resolvePrice',
+                        'call' => __CLASS__ . '::price',
                     ],
                 ],
                 'price_raw' => [
                     'type' => 'String',
                     'metadata' => [
-                        'label' => 'Price (Raw)',
+                        'label' => trans('Price (Raw)'),
                     ],
                     'extensions' => [
-                        'call' => __CLASS__ . '::resolveRawPrice',
+                        'call' => __CLASS__ . '::rawPrice',
                     ],
                 ],
                 'addtocart' => [
                     'type' => 'String',
                     'metadata' => [
-                        'label' => 'Add to Cart',
+                        'label' => trans('Add to Cart'),
                     ],
                     'extensions' => [
-                        'call' => __CLASS__ . '::resolveAddToCart',
+                        'call' => __CLASS__ . '::addToCart',
                     ],
                 ],
             ],
@@ -58,22 +60,22 @@ class ProductType
         ];
     }
 
-    public static function resolveId(J2StoreTableProduct $product): int
+    public static function id(J2StoreTableProduct $product): int
     {
         return $product->j2store_product_id;
     }
 
-    public static function resolvePrice(J2StoreTableProduct $product): string
+    public static function price(J2StoreTableProduct $product): string
     {
-        return \J2Store::product()->displayPrice($product->pricing->base_price, $product);
+        return J2Store::product()->displayPrice($product->pricing->base_price, $product);
     }
 
-    public static function resolveRawPrice(J2StoreTableProduct $product): string
+    public static function rawPrice(J2StoreTableProduct $product): string
     {
         return $product->pricing->price;
     }
 
-    public static function resolveAddToCart(J2StoreTableProduct $product): string
+    public static function addToCart(J2StoreTableProduct $product): string
     {
         $html = $product->get_product_cart_html();
 
