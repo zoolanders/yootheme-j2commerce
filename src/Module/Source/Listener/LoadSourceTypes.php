@@ -1,9 +1,9 @@
 <?php
 
-namespace ZOOlanders\YOOtheme\J2Store\Listener;
+namespace ZOOlanders\YOOtheme\J2Commerce\Module\Source\Listener;
 
 use YOOtheme\Builder\Source;
-use ZOOlanders\YOOtheme\J2Store\Type;
+use ZOOlanders\YOOtheme\J2Commerce\Module\Source\Type;
 
 class LoadSourceTypes
 {
@@ -13,7 +13,7 @@ class LoadSourceTypes
     public function handle($source): void
     {
         $types = [
-            [Type\J2StoreProductType::NAME, Type\J2StoreProductType::config()],
+            [Type\ProductType::NAME, Type\ProductType::config()],
         ];
 
         foreach ($types as $args) {

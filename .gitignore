@@ -7,7 +7,4 @@
 
 /dist
 /vendor
-/build/joomla/modules
-
-./ytp_j2store.php
-./ytp_j2store.xml
+/build/plugin/modules

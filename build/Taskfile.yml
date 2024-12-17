@@ -8,39 +8,38 @@ tasks:
     cmds:
       - task: utils:copy
         vars:
-          cwd: build/joomla
+          cwd: build/plugin
           src: '**'
-          ignore: update.xml
-          dest: dist/joomla
+          ignore: src
+          dest: dist/tmp
 
-      - task: copy-module-joomla
+      - task: copy-module
 
-      - task: placeholder-joomla
+      - task: placeholder
 
       - task: utils:zip
         vars:
-          cwd: dist/joomla
+          cwd: dist/tmp
           src: '**'
           dest: dist/{{.NAME}}-{{.VERSION}}.zip
 
       - defer:
-          task: clear-dist-joomla
+          task: clear-dist
 
-  copy-module-joomla:
+  copy-module:
     internal: true
     cmds:
       - task: utils:copy
         vars:
-          src: modules/**
-          dest: dist/joomla
-          ignore: modules/*wordpress*/**
+          src: src/**
+          dest: dist/tmp
 
-  placeholder-joomla:
+  placeholder:
     internal: true
     cmds:
       - task: utils:placeholder
         vars:
-          src: 'dist/joomla/**/*.xml'
+          src: 'dist/tmp/**/*.xml'
           replace:
             ref: >
               dict
@@ -54,29 +53,29 @@ tasks:
               "NAME" "{{.NAME}}"
               "VERSION" "{{.VERSION}}"
 
-  clear-dist-joomla:
+  clear-dist:
     internal: true
     cmds:
       - task: utils:remove
         vars:
-          src: dist/joomla
+          src: dist/tmp
 
-  setup-joomla:
+  setup:
     cmds:
       - task: utils:copy
         vars:
-          cwd: build/joomla
+          cwd: build/plugin
           src: '**'
           ignore: update.xml
-          dest: dist/joomla
+          dest: dist/tmp
 
-      - task: placeholder-joomla
+      - task: placeholder
 
       - task: utils:copy
         vars:
-          cwd: dist/joomla
+          cwd: dist/tmp
           src: '**'
           dest: ./
 
       - defer:
-          task: clear-dist-joomla
+          task: clear-dist

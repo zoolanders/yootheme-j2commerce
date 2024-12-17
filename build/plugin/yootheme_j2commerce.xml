@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <extension type="plugin" group="system" method="upgrade">
-    <name>{{TITLE}}</name>
+    <name>YOOtheme - J2Commerce</name>
     <version>{{VERSION}}</version>
     <description>{{DESCRIPTION}}</description>
     <creationDate>{{DATE}}</creationDate>
@@ -8,8 +8,9 @@
     <license>{{LICENSE}}</license>
     <author>{{AUTHOR}}</author>
     <authorUrl>{{AUTHORURL}}</authorUrl>
+    <namespace path="src">ZOOlanders\YOOtheme\J2Commerce</namespace>
     <files>
-        <filename plugin="ytp_source_j2store">ytp_source_j2store.php</filename>
-        <folder>modules</folder>
+        <folder plugin="yootheme_j2commerce">services</folder>
+        <folder>src</folder>
     </files>
 </extension>

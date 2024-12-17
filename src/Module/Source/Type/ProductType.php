@@ -1,13 +1,13 @@
 <?php
 
-namespace ZOOlanders\YOOtheme\J2Store\Type;
+namespace ZOOlanders\YOOtheme\J2Commerce\Module\Source\Type;
 
 use J2StoreTableProduct;
 
-class J2StoreProductType
+class ProductType
 {
     public const NAME = 'J2StoreProduct';
-    public const LABEL = 'J2Store Product';
+    public const LABEL = 'Product';
 
     public static function config(): array
     {

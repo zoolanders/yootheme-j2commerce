@@ -1,10 +1,6 @@
 <?php
 
-namespace ZOOlanders\YOOtheme\J2Store;
-
-require_once __DIR__ . '/Listener/LoadSourceTypes.php';
-require_once __DIR__ . '/Listener/ExtendArticleType.php';
-require_once __DIR__ . '/Type/J2StoreProductType.php';
+namespace ZOOlanders\YOOtheme\J2Commerce\Module\Source;
 
 require_once(JPATH_ADMINISTRATOR . '/components/com_j2store/helpers/j2store.php');
 
