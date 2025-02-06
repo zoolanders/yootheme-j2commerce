@@ -15,6 +15,10 @@ task build
 # => dist/yootheme_j2commerce-x.zip
 ```
 
+## Features
+
+- Extended Article Type with j2store ID, Price and AddToCart fields.
+
 ## Requirements
 
 - PHP 7.4+
