@@ -15,6 +15,10 @@ task build
 # => dist/yootheme_j2commerce-x.zip
 ```
 
+Install the plugin as usuall within the Joomla installer. Lunch YOOtheme Pro Builder and notice how the Article Type is now expanded with j2Store Product fields.
+
+<img width="500" alt="Screenshot 2025-02-06 at 21 15 01" src="https://github.com/user-attachments/assets/b82eca64-5436-4f3a-b1bd-69d62ee87065" />
+
 ## Features
 
 - Extended Article Type with j2store ID, Price and AddToCart fields.
