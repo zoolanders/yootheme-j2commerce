@@ -33,7 +33,7 @@ class ExtendArticleType
         ]);
     }
 
-    public static function resolveJ2StoreProduct($article): J2StoreTableProduct
+    public static function resolveJ2StoreProduct($article): ?J2StoreTableProduct
     {
         $table = J2Store::fof()->loadTable('Product', 'J2StoreTable');
         $model = F0FModel::getTmpInstance('Products', 'J2StoreModel');
@@ -41,6 +41,6 @@ class ExtendArticleType
         $product = $table->get_product_by_source('com_content', $article->id);
         $product = $model->getProduct($product);
 
-        return $product;
+        return $product ?: null;
     }
 }
