@@ -1,6 +1,6 @@
 # J2Commerce integration for YOOtheme Pro
 
-The [J2Commerce](https://j2commerce.com) (former J2Store) integration for [YOOtheme Pro](https://yootheme.com/page-builder).
+A simple and limited [J2Commerce](https://j2commerce.com) (former J2Store) integration for [YOOtheme Pro](https://yootheme.com/page-builder).
 
 ## Getting Started
 
@@ -21,11 +21,12 @@ Install the plugin as usuall within the Joomla installer. Lunch YOOtheme Pro Bui
 
 ## Features
 
-- Extended Article Type with j2store ID, Price and AddToCart fields.
+- Added J2Commerce Product direct query.
+- Extended Article Type with J2Commerce Product fields.
 
 ## Requirements
 
-- PHP 7.4+
+- PHP 8.0+
 - Joomla 4.0+
 - YOOtheme Pro 4.4+
 - J2Store 4.0+
