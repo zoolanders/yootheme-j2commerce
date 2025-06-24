@@ -12,18 +12,21 @@ class LoadSourceTypes
      */
     public function handle($source): void
     {
+        $query = [
+            Type\ProductQueryType::config(),
+        ];
+
         $types = [
             [Type\ProductType::NAME, Type\ProductType::config()],
+            [Type\ProductImageType::NAME, Type\ProductImageType::config()],
         ];
 
         foreach ($types as $args) {
             $source->objectType(...$args);
         }
 
-        // $query = [];
-
-        // foreach ($query as $args) {
-        //     $source->queryType($args);
-        // }
+        foreach ($query as $args) {
+            $source->queryType($args);
+        }
     }
 }
