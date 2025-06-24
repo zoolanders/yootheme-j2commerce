@@ -1,5 +1,10 @@
 # Changelog
 
+## Version 0.0.3 - June 24, 2024
+
+- Added Product Query in sources Pages group
+- Added mapping for SKU, UPC, link, stock quantity and images
+
 ## Version 0.0.2 - December 18, 2024
 
 - Added price and addtocart mapping fields
