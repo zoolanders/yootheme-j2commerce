@@ -29,7 +29,7 @@ Install the plugin as usuall within the Joomla installer. Lunch YOOtheme Pro Bui
 - PHP 8.0+
 - Joomla 4.0+
 - YOOtheme Pro 4.4+
-- J2Store 4.0+
+- J2Commerce 4.0+
 
 ## Mentions
 
